@@ -7,4 +7,16 @@ export class TasksService {
   testing() {
     return 'Testing';
   }
+  createTask() {
+    return 'create task';
+  }
+  updateTask() {
+    return 'update task';
+  }
+  patchTask() {
+    return 'patch task';
+  }
+  deleteTask() {
+    return 'delete task';
+  }
 }
