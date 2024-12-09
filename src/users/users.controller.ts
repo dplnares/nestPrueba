@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Put, Patch, Delete } from '@nestjs/common';
-import { UsersService } from './users.service';
+import { User, UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
@@ -9,7 +9,7 @@ export class UsersController {
     return this.userService.getUser();
   }
   @Post()
-  createUser() {
+  createUser(): User {
     return this.userService.createUser();
   }
   @Put()

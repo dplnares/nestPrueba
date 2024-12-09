@@ -12,7 +12,7 @@ export class TaskController {
     return this.taskService.getTasks();
   }
   @Post()
-  createTask() {
+  createTask():string {
     return this.taskService.createTask();
   }
   @Put()

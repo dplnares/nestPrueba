@@ -1,12 +1,17 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Res, Req } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { Request, Response } from 'express';
 
-@Controller('auth')
+@Controller({})
 export class AuthController {
-  constructor(private authService: AuthService) {} 
+  constructor(private authService: AuthService) {}
 
-  @Get()
-  getHello(): string {
-    return this.authService.getHello();
+  //  En esta parte puedo estandarizar la respuesta que enviaré al cliente
+  @Get('/')
+  index(@Req() request: Request, @Res() response: Response) {
+    console.log(request.url);
+    response.status(200).json({
+      message: 'Hola CPP!',
+    });
   }
 }
